@@ -1,9 +1,18 @@
 
 import React, { useEffect, useState } from 'react';
 import Meal from '../MealDb/meal/Meal';
+import Cart from '../Cart/Cart';
 import './MealBody.css'
 const MealBody = () => {
     const [meals, setMeals] = useState([]);
+    const [cart , setCart] = useState([])
+
+    const handleClick = (meals) => {
+        console.log(meals);
+        const neweCart = [...cart, meals]
+        setCart(neweCart)
+    }
+
     useEffect(() =>{
         fetch('https://www.themealdb.com/api/json/v1/1/search.php?f=a')
         .then(res => res.json())
@@ -20,13 +29,16 @@ const MealBody = () => {
                 <h1>meal Length {meals.length}</h1>
               <div className="meal-grid">
                     {
-                        meals.map(meal => <Meal key={meal.idMeal} meal={meal} ></Meal>)
+                        meals.map(meal => <Meal key={meal.idMeal}
+                             meal={meal} 
+                             handleClick = {handleClick}
+                             ></Meal>)
                     }
 
               </div>
             </div>
             <div className="meal-cart">
-                <h2>meal cart</h2>
+              <Cart cart= {cart}></Cart>
             </div>
         </div>
     );

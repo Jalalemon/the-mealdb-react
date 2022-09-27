@@ -1,9 +1,11 @@
 import React from 'react';
 import './Meal.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 const Meal = (props) => {
-    const { strMealThumb, strArea, strIngredient1,
+    const { strMealThumb, strArea, idMeal, strIngredient1,
         strSource, strInstructions, 
-} = props.meal
+} = props.meal;
     return (
         <div className='meal'>
 
@@ -12,12 +14,12 @@ const Meal = (props) => {
          <div className="text">
 
                 <h3> Name: {strIngredient1} </h3>
-                {/* <p> Source {strInstructions}</p> */}
+                <p>{idMeal}</p>
                 <p> section {strArea} </p>
                 <p> {strSource}</p>
-                <p></p>
-
          </div>
+            <button onClick={() => props.handleClick(props.meal)} className='cart-btn'><p>Add to cart</p> 
+                <FontAwesomeIcon icon={faShoppingCart}></FontAwesomeIcon> </button>
         </div>
     );
 };

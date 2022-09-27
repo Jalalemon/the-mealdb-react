@@ -10,8 +10,15 @@
 }
 .meal-container {
     margin-top: 50px;
+    position: sticky;
+    margin-top: 0px;
 }
 
 .search-btn {
    
+}
+.meal-cart {
+    background-color: antiquewhite;
+    position: sticky;
+    margin-top: 0px;
 }
