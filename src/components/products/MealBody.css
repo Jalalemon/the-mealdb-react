@@ -1,0 +1,17 @@
+.meal-shop {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+
+}
+.meal-grid {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr); 
+   grid-gap: 25px;
+}
+.meal-container {
+    margin-top: 50px;
+}
+
+.search-btn {
+   
+}

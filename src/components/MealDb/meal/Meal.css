@@ -1,0 +1,17 @@
+.meal {
+    height: 510px;
+    width: 350px;
+    border: 1px solid black;
+    border-radius: 15px;
+    box-shadow:  0 0 8px 4px;
+    word-wrap: break-word;
+}
+.meal img {
+    height: 286px;
+    width: 286px;
+
+}
+.text {
+    padding: 5px;
+    
+}
