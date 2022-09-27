@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Meal from '../MealDb/meal/Meal';
 import Cart from '../Cart/Cart';
 import './MealBody.css'
+import { addToDb } from '../utilities/fakebd';
 const MealBody = () => {
     const [meals, setMeals] = useState([]);
     const [cart , setCart] = useState([])
@@ -10,6 +11,14 @@ const MealBody = () => {
     const handleClick = (meals) => {
         const neweCart = [...cart, meals]
         setCart(neweCart)
+        addToDb(meals.idMeal)
+    }
+
+    const removeToDb = (meals) => {
+        const neweCart = [...cart, meals]
+        setCart(neweCart)
+        addToDb(meals.idMeal)
+
     }
 
     useEffect(() =>{
@@ -29,7 +38,8 @@ const MealBody = () => {
               <div className="meal-grid">
                     {
                         meals.map(meal => <Meal key={meal.idMeal}
-                             meal={meal} 
+                             meal={meal}
+                            removeToDb ={removeToDb} 
                              handleClick = {handleClick}
                              ></Meal>)
                     }

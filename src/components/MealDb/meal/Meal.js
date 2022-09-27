@@ -20,6 +20,9 @@ const Meal = (props) => {
          </div>
             <button onClick={() => props.handleClick(props.meal)} className='cart-btn'><p>Add to cart</p> 
                 <FontAwesomeIcon icon={faShoppingCart}></FontAwesomeIcon> </button>
+            <button onClick={() => props.removeToDb(props.meal)} className='cart-btn'><p>Add to cart</p> 
+                <FontAwesomeIcon icon={faShoppingCart}></FontAwesomeIcon> </button>
+
         </div>
     );
 };
