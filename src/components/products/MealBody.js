@@ -8,7 +8,6 @@ const MealBody = () => {
     const [cart , setCart] = useState([])
 
     const handleClick = (meals) => {
-        console.log(meals);
         const neweCart = [...cart, meals]
         setCart(neweCart)
     }
